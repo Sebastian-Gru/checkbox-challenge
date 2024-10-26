@@ -1,0 +1,50 @@
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+/* Uncomment to hide the native checkbox and only show the custom checkbox */
+/* .native-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+} */
+
+.native-checkbox:not(:focus-visible) + .custom-checkbox {
+  outline: none;
+}
+
+.native-checkbox:focus-visible + .custom-checkbox {
+  outline: 3px solid blue;
+  outline-offset: 2px;
+}
+
+.custom-checkbox {
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.custom-checkbox .check-icon {
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  stroke: #fff;
+}
+
+.native-checkbox:checked + .custom-checkbox {
+  background-color: black;
+  border-color: black;
+}
+
+.native-checkbox:checked + .custom-checkbox .check-icon {
+  opacity: 1;
+}
